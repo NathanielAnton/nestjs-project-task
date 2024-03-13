@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { LoggerMiddleware } from './logger.middleware';
 import { SimpsonsModule } from './simpsons/simpsons.module';
 import { Simpsons } from './types/simpson';
+import { EpisodesService } from './simpsons-episodes/simpsons-episodes.service';
 
 const simpsons: Simpsons = {
   characters: [
@@ -57,7 +58,7 @@ const simpsons: Simpsons = {
     SimpsonsModule.register(simpsons),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, EpisodesService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

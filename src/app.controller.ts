@@ -12,10 +12,6 @@ const endpoints = {
 
 @Controller()
 export class AppController {
-  getEpisodesBySimpson: any;
-  getSimpsons(): any {
-    throw new Error('Method not implemented.');
-  }
   constructor(
     private readonly appService: AppService,
     private SimpsonService: SimpsonsService,
@@ -38,12 +34,12 @@ export class AppController {
   }
 
   @Get('doctors')
-  getDoctors(): Object {
+  getSimpsons(): Object {
     return this.SimpsonService.getSimpsons();
   }
 
   @Get('simpsons/:id')
-  getDoctor(@Param('id') id: number): Object {
+  getSimpsonById(@Param('id') id: number): Object {
     return this.SimpsonService.getSimpsonById(id);
   }
 

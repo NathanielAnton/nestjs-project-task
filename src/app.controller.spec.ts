@@ -18,6 +18,9 @@ describe('AppController', () => {
     it('should return all Simpsons', () => {
       expect(appController.getSimpsons()).toEqual({ Simpsons: [{ SimpsonNumber: 1, name: 'Homer' }] });
     });
+    it('should return a doctor', () => {
+      expect(appController.getSimpsonById(1)).toEqual({ doctorNumber: 1, name: 'Homer' });
+    });
     it('should return all episodes', () => {
       expect(appController.getEpisodes()).toEqual({
         episodes: [{
@@ -28,7 +31,7 @@ describe('AppController', () => {
       });
     });
     it('should return episodes by Simpson', () => {
-      expect(appController.getEpisodesBySimpson(1)).toEqual({
+      expect(appController.getSimpsonById(1)).toEqual({
         episodes: [{
           episodeNumber: 1,
           SimpsonNumber: 1,
