@@ -49,7 +49,7 @@ export class AppController {
   }
 
   @Get('episodes/simpsons/:id')
-  getEpisodesByDoctor(@Param('id') id: number): Object {
+  getEpisodesBySimpson(@Param('id') id: number): Object {
     return this.episodeService.getEpisodesBySimpson(id);
   }
 
