@@ -33,7 +33,7 @@ export class AppController {
 
   }
 
-  @Get('doctors')
+  @Get('simpsons')
   getSimpsons(): Object {
     return this.SimpsonService.getSimpsons();
   }
